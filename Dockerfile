@@ -1,13 +1,19 @@
 # Declare Python Version (Base Image) (Lightweight OS)
-FROM python:3.8
+FROM python:3.12
 
-COPY . /
+# Copy the code
+COPY ./ /
 
-RUN pip install -r dependencies.txt
+# Declare ENV variable (not viable in company production code)
+ENV DATABASE_URL=postgres://Auryx:1tZ4FmfKhzpg@ep-delicate-rain-59449480.us-west-2.aws.neon.tech/Movie_Tracker_v2
 
-CMD gunicorn movieTracker.wsgi
-# # IDing the working directory path
-# WORKDIR /movies
+# Run installation for dependencies
+RUN pip install -r dependencies.txt --verbose
+
+# Run the App
+CMD gunicorn -b 0.0.0.0:8000 movieTracker.wsgi 
+
+## Below are previous attempts at writing the Dockerfile
 
 # # Making a working copy of the dependencies file
 # COPY dependencies.txt dependencies.txt
@@ -19,7 +25,7 @@ CMD gunicorn movieTracker.wsgi
 # COPY . .
 
 # # port declaration
-# EXPOSE 8000
+EXPOSE 8000
 
 # provide container default execution
 # CMD [ "python3", "manage.py", "runserver", "0.0.0.0:8000"]
