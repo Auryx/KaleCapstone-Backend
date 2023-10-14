@@ -1,5 +1,5 @@
 # Declare Python Version (Base Image) (Lightweight OS)
-FROM python:3.12
+FROM --platform=linux/amd64 python:3.12
 
 # Copy the code
 COPY ./ /
@@ -11,7 +11,7 @@ ENV DATABASE_URL=postgres://Auryx:1tZ4FmfKhzpg@ep-delicate-rain-59449480.us-west
 RUN pip install -r dependencies.txt --verbose
 
 # Run the App
-CMD gunicorn -b 0.0.0.0:8000 movieTracker.wsgi 
+CMD gunicorn -b 0.0.0.0:$PORT movieTracker.wsgi 
 
 ## Below are previous attempts at writing the Dockerfile
 

@@ -1,15 +1,15 @@
-# fly.toml app configuration file generated for movie-tracker-backend on 2023-10-13T19:26:24-07:00
+# fly.toml app configuration file generated for movie-tracker-backend-v2 on 2023-10-13T23:35:34-07:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "movie-tracker-backend"
+app = "movie-tracker-backend-v2"
 primary_region = "sea"
 
 [build]
 
 [http_service]
-  internal_port = 8080
+  internal_port = 8000
   force_https = true
   auto_stop_machines = true
   auto_start_machines = true
