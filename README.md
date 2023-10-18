@@ -7,7 +7,7 @@ This app is a very basic movie tracker that catalogs movies with a Django backen
 ### Links
 [**Deployment**](https://intense-forest-85466-8a4e6faec164.herokuapp.com/)
 [**Backend**](https://stormy-journey-78172-5e031ccea3dc.herokuapp.com/movies/)
-[**Frontend Github**](https://github.com/Auryx/KaleCapstone-Frontend/))
+[**Frontend Github**](https://github.com/Auryx/KaleCapstone-Frontend/)
 
 ### Technologies used
 - React (Frontend)
